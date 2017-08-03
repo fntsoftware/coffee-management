@@ -1,0 +1,44 @@
+
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+auto lo
+iface lo inet loopback
+
+iface eth0 inet static
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet static
+wpa-ap-scan 1
+wpa-scan-ssid 1
+address 172.27.10.180
+gateway 172.27.10.1
+netmask 255.255.254.0
+# wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+dns-nameservers: 8.8.8.8 8.8.4.4 172.27.10.1
+
+# eigente Netzadresse
+#auto eth0
+#iface eth0 inet static
+#adress 172.27.10.179
+#gateway 172.27.10.1
+#netmask 255.255.254.0
+
+#auto wlan0
+#allow-hotplug wlan0
+#iface wlan 0 inet static
+#address 172.27.10.180
+#gateway 172.27.10.1
+#netmask 255.255.254.0
+#wpa-ap-scan 1
+#wpa-scan-ssid 1
+## Netzwerkt einrichen
+
+wpa-ssid "FNT-Office"
+wpa-psk "90DidFNTOn-WPAK!39"

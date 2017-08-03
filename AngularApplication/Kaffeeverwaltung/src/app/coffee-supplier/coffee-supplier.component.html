@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<body>
+	<!-- Indroduction text -->
+	<h2> Die Top10 Kaffeekannebrauer bei FNT </h2>
+	<br>
+  <p> Als Motivation nicht nur die fertige Kaffeekanne abzuholen, sondern</p>
+  <p> auch die leere Kaffeekanne neu zu bef&uuml;llen, werden diejenigen,</p>
+  <p> die die leere Kaffeekanne neu befüllen hier geehrt und erhalten</p>
+	<p> einen Ehrenplatz in der unten aufgeführten Liste!</p>
+	<br>
+  <!-- coffee pot animation -->
+  <span id="animation"></span>
+		<div class="animation-container">
+			<!-- Coffee bag ->ok -->
+		  <div class="coffee-bag-container">
+			  <div class="coffee-bag">
+			    <span class="mast"></span>
+			    <span class="bag-top"></span>
+			    <span class="bag-body"></span>
+			    <span class="logo">
+			      <span class="bean bean-one"></span>
+			      <span class="bean bean-two"></span>
+			    </span>
+			    <span class="info info-one"></span>
+			    <span class="info info-two"></span>
+			    <span class="info info-three"></span>
+			    <span class="bag-bottom"></span>
+			  </div>
+			</div>
+	<!-- Beans -->
+  <span class="grounds-container">
+  <span class="grounds grounds-one"></span>
+  <span class="grounds grounds-two"></span>
+  <span class="grounds grounds-three"></span>
+  <span class="grounds grounds-four"></span>
+  </span>
+		  <div class="filter"></div><!-- ./filter -->
+		  <!-- TODO: create coffee grounds falling from the bag into the filter -->
+		  <span class="roasting-top"></span>
+		  <div class="roasting-body">
+		    <span class="handle-container">
+		      <span class="handle-one"></span>
+		      <span class="handle-two"></span>
+		    </span>
+		  </div><!-- ./roasting-body -->
+		  <!-- the black part between the coffee pot and the filter -->
+		  <span class="screen"></span>
+		  <span class="water-attachment"></span>
+		  <span class="water-lid"></span>
+		  <span class="water-pot">
+		  	
+		  	<span class="water"></span>
+		  </span>
+		  <span class="warmer-plate"></span> 
+		  <span class="warmer">
+		  	<span class="warmer-accent accent-one"></span>
+		  	<span class="warmer-accent accent-two"></span>
+		  	<span class="warmer-accent accent-three"></span>
+		  </span>
+		  <span class="warmer-base"></span> 
+		  <span class="coffee-pot-container">
+			  <span class="coffee-pot-top"></span>
+			  <span class="coffee-pot-glass-top"></span>
+			  <span class="coffee-pot-glass-connector"></span>
+			  <span class="coffee-pot-glass-base">
+			  	<span class="coffee-pot-gloss"></span>
+			  </span>
+			  <span class="coffee-pot-handle-container">
+			  	<span class="handle-top"></span>
+			  	<span class="handle-bottom"></span>
+			  </span>
+			  <span class="coffee-drip"></span>
+			  <span class="drip-cover"></span>
+			  <span class="coffee"></span>
+		  </span>
+		  <span class="coffee-warmer-plate"></span>
+		  <span class="coffee-base-left-end"></span>
+		  <span class="coffee-maker-base"></span>
+    </div>
+    <!-- Dynamic text -->
+    <h1>Vielen Dank! Florian</h1> 
+		<br><br>
+		
+    <!-- Relode button -->
+    <button class="button" onclick="location.reload()">Animation Wiederholen</button>
+		<br><br>
+
+		<!-- Table -->
+    <table class="table-fill">
+			<thead>
+				<tr>
+					<th class="text-left">Platz</th>
+					<th class="text-left">Name</th>
+					<th class="text-left">Anzahl der Vorg&auml;nge</th>
+				</tr>
+			</thead>
+			<tbody class="table-hover">
+				<tr>
+					<td class="text-left">1</td>
+					<td class="text-left" [innerHTML] = "first"></td>
+					<td class="text-left" [innerHTML] = "firstValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">2</td>
+					<td class="text-left" [innerHTML] = "second"></td>
+					<td class="text-left" [innerHTML] = "secondValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">3</td>
+					<td class="text-left" [innerHTML] = "third"></td>
+					<td class="text-left" [innerHTML] = "thirdValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">4</td>
+					<td class="text-left" [innerHTML] = "fourth"></td>
+					<td class="text-left" [innerHTML] = "fourthValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">5</td>
+					<td class="text-left" [innerHTML] = "fifth"></td>
+					<td class="text-left" [innerHTML] = "fifthValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">6</td>
+					<td class="text-left" [innerHTML] = "sixth"></td>
+					<td class="text-left" [innerHTML] = "sixthValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">7</td>
+					<td class="text-left" [innerHTML] = "seventh"></td>
+					<td class="text-left" [innerHTML] = "seventhValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">8</td>
+					<td class="text-left" [innerHTML] = "eighth"></td>
+					<td class="text-left" [innerHTML] = "eighthValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">9</td>
+					<td class="text-left" [innerHTML] = "ninth"></td>
+					<td class="text-left" [innerHTML] = "ninthValue"></td>
+				</tr>
+				<tr>
+					<td class="text-left">10</td>
+					<td class="text-left" [innerHTML] = "tenth"></td>
+					<td class="text-left" [innerHTML] = "tenthValue"></td>
+				</tr>
+			</tbody>
+		</table>
+  </body>

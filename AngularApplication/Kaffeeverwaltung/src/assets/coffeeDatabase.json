@@ -1,0 +1,99 @@
+{
+  "building1": {
+    "floor1": 10,
+    "floor2": 10,
+    "floor3": 50
+  },
+  "building2": {
+    "floor1": 20,
+    "floor2": 100,
+    "floor3": 140,
+    "floor4": 70,
+    "floor5": 0
+  },
+  "building3": {
+    "floor1": 440,
+    "floor2": 320,
+    "floor3": 190
+  },
+  "summary": {
+    "building1": 440
+  },
+  "coffeeChefKing": {
+    "name1": [
+      "Maik"
+    ],
+    "consumption1": 430,
+    "name2": [
+      "Josch"
+    ],
+    "consumption2": 220,
+    "name3": "Thomas",
+    "consumption3": 110
+  },
+  "coffeeChefEmperor": {
+    "name": "Konstantin",
+    "consumption": "70"
+  },
+  "status": {
+    "building3floor1": "aktiv",
+    "building3floor1Time": "15:46 20:7:2017",
+    "building1floor1": "inaktiv",
+    "building1floor1Time": "unbekannt",
+    "building1floor2": "inaktiv",
+    "building1floor2Time": "unbekannt",
+    "building1floor3": "inaktiv",
+    "building1floor3Time": "unbekannt",
+    "building2floor2": "inaktiv",
+    "building2floor2Time": "unbekannt",
+    "building2floor3": "inaktiv",
+    "building2floor3Time": "unbekannt",
+    "building2floor4": "inaktiv",
+    "building2floor4Time": "unbekannt",
+    "building2floor5": "inaktiv",
+    "building2floor5Time": "unbekannt",
+    "building3floor3": "inaktiv",
+    "building3floor3Time": "unbekannt",
+    "building3floor2": "aktiv",
+    "building3floor2Time": "8:17 19:7:2017",
+    "building2floor1": "aktiv",
+    "building2floor1Time": "9:2 19:7:2017"
+  },
+  "consumption": {
+    "consumptionb3f1": 30,
+    "consumptionb3f2": 20,
+    "consumptionb3f3": 30,
+    "averageb3f1": 70,
+    "averageb3f2": 25,
+    "averageb3f3": 73
+  },
+  "history": {
+    "notification1Building": 3,
+    "notification1Floor": 1,
+    "notification1Time": "14:4 19:7:2017",
+    "notification2Building": 3,
+    "notification2Floor": 1,
+    "notification2Time": "15:27 20:7:2017",
+    "notification3Building": 3,
+    "notification3Floor": 1,
+    "notification3Time": "15:46 20:7:2017"
+  },
+  "number": [
+    {
+      "count": 1
+    }
+  ],
+  "pot": {
+    "building1floor1": false,
+    "building1floor2": false,
+    "building1floor3": false,
+    "building2floor1": false,
+    "building2floor2": false,
+    "building2floor3": false,
+    "building2floor4": false,
+    "building2floor5": false,
+    "building3floor1": false,
+    "building3floor2": false,
+    "building3floor3": false
+  }
+}

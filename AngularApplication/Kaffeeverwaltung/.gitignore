@@ -11,8 +11,6 @@
 # IDEs and editors
 /.idea
 .project
-/nbproject
-/nbproject/private/
 .classpath
 .c9/
 *.launch

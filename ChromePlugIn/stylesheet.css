@@ -1,0 +1,159 @@
+/* Stylesheet for the plug-in */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans';
+}
+
+div#header {
+    width: 100%;
+    height: 50px;
+    background-color: #2c3e50;
+    margin: 0 auto;
+    color: #0F275C;
+}
+
+#background {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    
+}
+
+label {
+    font-family: Arial, sans-serif;
+    color: #0F275C;
+}
+
+h3 {
+    color: #0F275C;
+}
+
+/* ------------------------- Input fields and buttons --------------------------------- */
+::placeholder {
+     color: #0F275C;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #0F275C;
+    height: 100%;
+}
+
+input[type=number], select {
+    width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #0F275C;
+    height: 100%;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #0F275C;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+    color: #0F275C;
+}
+
+textarea {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #0F275C;
+}
+
+.button {
+    position: relative;
+    background-color: #0F275C;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+	border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1.8s;
+    color: #0F275C;
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+    color: #0F275C;
+}
+
+#refillBtn {
+	width: 165px;
+}
+/* --------------------------------- Fieldset -------------------------------- */
+
+#small {
+    font-size: 10px; 
+    font-family: cursive; 
+    color: #0F275C;
+}
+
+fieldset {
+    font-family: sans-serif;
+    border: 5px solid #1F497D;
+    background: #AA4040;
+    border-radius: 5px;
+    padding: 15px;
+    transition: 0s;
+}
+
+fieldset legend {
+    background: #1F497D;
+    color: #fff;
+    padding: 5px 10px 5px 12px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 1 1 1 5px #fff;
+    margin-left: 1px;
+}

@@ -1,0 +1,1 @@
+python /home/pi/git/coffeesnitch/rfid_adapter/rfid_scanner1.py &

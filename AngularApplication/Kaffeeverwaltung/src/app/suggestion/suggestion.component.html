@@ -1,0 +1,44 @@
+<body>	
+	<h2>Vorschl&auml;ge</h2>
+
+	<form>
+		<div class="form-group">
+			<label for="name23">Name: </label><br>
+			<input type="text" class="form-control" required minlength="3"  maxlength="20" #name="ngModel" id="name" name="name" required [(ngModel)]="suggestionViewModel.name" placeholder="Bitte geben Sie Ihren Namen ein ..."/><br>
+				<div *ngIf="name.errors && (name.dirty || name.touched)" class="alert">
+					<div [hidden]="!name.errors.required"> Name ist ein Plichtfeld!</div>
+					<div [hidden]="!name.errors.minlength"> Geben Sie mindestens drei Buchstaben ein!</div>
+				</div>
+			<br>
+		</div>
+		<div class="form-group">
+			<label for="email">E-Mail: </label><br>
+			<input  width="100%" type="text" #email="ngModel" minlength="5" maxlegth="20" class="form-control" id="email"  name="E-Mail" required [(ngModel)]="suggestionViewModel.email"  placeholder="Bitte geben Sie Ihre E-Mail ein ..."/> <br><br>
+				<div *ngIf="email.errors && (email.dirty || email.touched)" class="alert">
+					<div [hidden]="!email.errors.required"> E-Mail Addresse ist Plichtfeld!</div>
+					<div [hidden]="!email.errors.minlength"> Geben Sie mindestens f&uuml;nf Buchstaben ein!</div>
+				</div>
+		</div><br>
+		<div class="form-group">
+			<label for="vorschlag">Vorschlag: </label><br>
+			<textarea class="form-control" #sugg="ngModel" id="vorschlag" rows="10" minlength="1" cols="50"  name="Suggestion" [(ngModel)]="suggestionViewModel.suggest" placeholder="Bitte geben Sie Ihren Vorschlag ein ..."></textarea><br><br>
+			<div *ngIf="sugg.errors && (sugg.dirty || sugg.touched)" class="alert">
+					<div [hidden]="!sugg.errors.required"> Vorschlag ist ein Pflichtfeld!</div>
+					<div [hidden]="!sugg.errors.minlength"> Geben Sie mindestens einen Buchstaben ein!</div>
+				</div>
+		</div>
+		<div class="form-group">
+			<label for="prio">Priorit&auml;t: </label><br>
+		
+			<select id="prio"  name="Priority" [(ngModel)]="suggestionViewModel.prio"  class="form-control">
+				<option>Bitte w&auml;hlen aus</option>
+				<option value="Sehr Hoch">Sehr hoch</option>
+				<option value="Hoch">Hoch</option>
+				<option value="Mittel">Mittel</option>
+				<option value="Niedrig">Niedrig</option>
+			</select>
+		</div>
+		<br>
+		<button type="submit" class="button" (click)="send()">Submit</button>
+	</form>
+</body>

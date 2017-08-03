@@ -1,0 +1,39 @@
+{
+  "username": {
+    "name": "Angela",
+    "building": 1,
+    "floor": 1
+  },
+  "action": [
+    {
+      "id": 1,
+      "name": "Jürgen"
+    },
+    {
+      "id": 2,
+      "name": "Marcus"
+    },
+    {
+      "consumption": 5,
+      "number": 1,
+      "duration": 8
+    },
+    {
+      "id": 1,
+      "name": "Jürgen"
+    },
+    {
+      "id": 2,
+      "name": "Marcus"
+    },
+    {
+      "id": 2,
+      "name": "Marcus"
+    },
+    {
+      "consumption": 5,
+      "number": 1,
+      "duration": 8
+    }
+  ]
+}

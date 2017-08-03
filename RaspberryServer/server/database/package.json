@@ -1,0 +1,16 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "bla",
+  "main": "index.js",
+  "keywords": [],
+  "scripts": {},
+  "repository": {},
+  "author": "Angular Authors",
+  "license": "MIT",
+  "dependencies": {
+    "lowdb": "^0.16.2"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}

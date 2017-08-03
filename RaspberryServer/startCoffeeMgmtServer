@@ -1,0 +1,1 @@
+pm2 start ./git/coffeesnitch/server/system.json

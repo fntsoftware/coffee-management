@@ -1,0 +1,50 @@
+p {
+	font-family: Atial, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	text-decoration: none;
+	text-align: left;
+}
+
+h2 {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 2px 2px black;
+	text-align: left;
+	padding: 5px;
+  padding-bottom: 1px;
+	display: block;
+}
+
+main,
+article,
+section,
+aside {
+	border-radius: 0px 0.5em 0.5em;
+	border: 1px solid;
+	padding: 10px;
+	margin: 10px;
+}
+
+main {
+	display: block;
+	background: #0F275C;
+	border-color: black;		//RoyalBlue
+	min-width: 16em;
+	}
+
+section {
+	background: #0F275C;
+	border-color: slateblue;
+}
+
+article {
+	background: #88ACE0;
+	border-color: #F0FFFF;
+}
+
+aside {
+	background: #88ACE0;
+	border-color: #F0FFFF;
+	line-height: 2.5;
+}

@@ -1,0 +1,46 @@
+{
+  "apps" : [
+  {
+    // bus
+    "name"        : "bus",
+    "script"      : "/home/pi/git/coffeesnitch/server/bus/Bus.js",
+    "instances"   : 1,
+    "watch"       : false
+  },
+  {
+    // JsonAdapter
+    "name"        : "jsonAdapter",
+    "script"      : "/home/pi/git/coffeesnitch/server/JsonAdapter.js",
+    "instances"   : 1,
+    "watch"       : false
+  },
+  {
+    // CountdownModule
+    "name"        : "countdownModule",
+    "script": "/home/pi/git/coffeesnitch/server/CountdownModule.js",
+    "instances"   : 1,
+    "watch"       : false
+  },
+  {
+    // MappingModule
+    "name"        : "mappingModule",
+    "script": "/home/pi/git/coffeesnitch/server/MappingModule.js",
+    "instances"   : 1,
+    "watch"       : false
+  },
+  {
+    // BrowserExtensionNotificationModule
+    "name"        : "browserExtensionNotificationModule",
+    "script"      : "/home/pi/git/coffeesnitch/server/BrowserExtensionNotificationModule.js",
+    "instances"   : 1,
+    "watch"       : false
+  },
+  {
+    // DatabaseModule
+    "name": "databaseModule",
+    "script": "/home/pi/git/coffeesnitch/server/DatabaseModule.js",
+    "instances": 1,
+    "watch": false
+  }
+]
+}

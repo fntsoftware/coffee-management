@@ -1,0 +1,19 @@
+{
+  "name": "coffeemgmt",
+  "version": "1.0.0",
+  "description": "This is a demo of the new coffee Management  ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "coffee"
+  ],
+  "author": "FNT Lab 2 Group",
+  "license": "ISC",
+  "dependencies": {
+    "request-json": "^0.5.5",
+    "simplebus": "0.0.4",
+    "websocketserver": "^1.0.0"
+  }
+}

@@ -1,0 +1,52 @@
+ul {
+		display: inline-block;
+		width: 100%;
+		font-size: 18px;
+		line-height: 0;
+		margin: 0 auto;
+		padding: 0;
+		background: #0F275C;
+		color: #ffffff;
+		height: 30px;
+}
+
+a {
+	font-size: 15px;
+	text-decoration: none;
+	font-style: italic;
+	font-style: oblique;
+	color: #ffffff;
+}
+
+ul li {
+	display: inline;
+	margin: 0 5px 0 0;
+	padding: 5px;
+}
+
+ul li a {
+	display: inline;
+	font-size: 16px;
+	line-height: normal;
+	text-align: left;
+	color: #ffffff;
+	padding: 15px 20px;
+}
+
+.Link {
+	float: left;
+}
+
+.Company {
+	float: right;
+}
+
+div {
+	text-align: right;
+	position: relative;
+	display: inline;
+	font-size: 16px;
+	line-height: normal;
+	color: #ffffff;
+	padding: 15px 20px;
+}

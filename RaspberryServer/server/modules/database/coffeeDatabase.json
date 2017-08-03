@@ -1,0 +1,55 @@
+{
+  "userDef": {},
+  "actions": [
+    {
+      "id": 1,
+      "name": "Leon",
+      "building": 3,
+      "floor": 1,
+      "consumption": 350,
+      "number": 11,
+      "duration": 56
+    },
+    {
+      "id": 2,
+      "name": "Konstantin",
+      "building": 3,
+      "floor": 1,
+      "consumption": 5,
+      "number": 1,
+      "duration": 7
+    },
+    {
+      "id": 3,
+      "name": "Florian",
+      "building": 7,
+      "floor": 3,
+      "consumption": 233,
+      "number": 9,
+      "duration": 32
+    }
+  ],
+  "user": {
+    "name": "username",
+    "building": "building of the user",
+    "floor": "floor of the building"
+  },
+  "user1": {
+    "id": 1,
+    "name": "Leon",
+    "building": 3,
+    "floor": 1
+  },
+  "user2": {
+    "id": 2,
+    "name": "Konstantis",
+    "building": 3,
+    "floor": 1
+  },
+  "user3": {
+    "id": 3,
+    "name": "Florian",
+    "building": 7,
+    "floor": 3
+  }
+}

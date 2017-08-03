@@ -1,0 +1,30 @@
+<body>
+	<br>
+	<h2>Der Kaffeekockkönig</h2>
+	<br>
+	<hr><br>
+	<p>Der Mitarbeiter der an meisten Kaffee kocht bekommt feierlich den ehrwürdigen Titel des Kaffeekochk&ouml;nigs verliehen!</p>
+	<p>Um daran teilzunehmen, m&uuml;sst Ihr euren Namen beim Plug-In angeben und euch mit dem Server verbinden.</p>
+	<p>Wird nun ein Kaffee gekocht, erhaltet Ihr eine Benachrichtigung zur Abholung. Diese Benachrichtigung m&uuml;sst Ihr</p>
+	<p>im Folgenden mit "Ja" Best&auml;tigen und euch wird der Abholvorgang gutgeschrieben. Bei mehreren freiwilligen </p>
+	<p>Kaffeeboten, wird der Erste als Kaffeebote bestimmt. Und vergesst nicht die Kaffeekanne dann auch abzuholen! </p>
+	
+	<br>
+    <h3>Statistik der drei besten Kaffeek&ouml;che (in Liter)</h3>
+	<div id="DonutChart">
+         <canvas baseChart *ngIf="doughnutChartData && doughnutChartData.length > 0" 
+              [data]="doughnutChartData"
+              [colors]="doughnutColors"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <table>
+        <tr>
+            <td><div id="coffeeKing">Der diesw&ouml;chige Kaffeekockk&ouml;nig ist:</div></td>
+            <td><div id="animate" [@myAnimation]='state' (click)="animateMe()" [innerHTML] = "'<p>' + htmlString + '</p>'"></div></td>
+        </tr>
+    </table>
+	
+</body>

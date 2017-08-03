@@ -1,0 +1,80 @@
+body {
+		width: 95%;
+		height: 900px;
+}
+
+h1 {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 2px 2px black;
+	text-align: right;
+	padding: 5px;
+	display: inlne;
+}
+
+
+h2 {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 2px 2px black;
+	text-align: left;
+	padding: 5px;
+  	padding-bottom: 1px;
+	display: block;
+}
+
+h3 {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 0px 0px black;
+	text-align: left;
+	padding: 15px;
+	display: inline;
+}
+
+p {
+	font-family: Arial,  sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+}
+
+#animate {
+	width: 200px;
+	background: #2273ab;
+	margin: 50px auto;
+	padding: 10px;
+	font-size: 20px;
+	text-align: center;
+	float: left;
+	border-radius: 20px;
+
+}
+
+#coffeeKing {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 1px 1px black;
+	text-align: center;
+	padding: 0px;
+	display: inline;
+	font-size: 20px;
+}
+
+#DonutChart {
+	width: 350px;
+	height: 350px;
+}
+
+@media (min-width: 0px) and (max-width: 599px) {
+	body {
+		width: 95%;
+		height: 1100px;
+	}
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+	body {
+		width: 95%;
+		height: 1000px;
+	}
+}

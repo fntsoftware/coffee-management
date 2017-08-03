@@ -1,0 +1,304 @@
+body {
+	width: 100%; 
+	height: 1500px;
+}
+
+h2 {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 2px 2px black;
+	text-align: left;
+	padding: 23px;
+	display: block;
+}
+
+a {
+	color: #27408B;
+	text-decoration: underline;
+	font-size: 13px;
+	font-style: oblique;
+	font-style: italic;
+	text-align: left;
+}
+
+p {
+	font-family: Arial,  sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+}
+
+#konfi {
+	margin: 20px;
+	width: 50%;
+	height: 25;
+	border-radius: 5px;
+	box-shadow: 10px -10px #0F275C;
+	border: 2px dotted #0F275C;
+	text-align: center;
+	padding: 5px;
+	padding-left: 20px;
+	padding-bottom: 0px;
+}
+
+
+#img {
+  display: block;
+  height: auto;
+  max-width: 100%
+}
+
+@-webkit-keyframes fade-in{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slider-wrapper {
+  border: 2px solid #eee;
+  -moz-border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  border-radius: 0.625em;
+  padding: 0.625em
+}
+
+#slider {
+  background-color: black;
+  position: relative
+}
+
+#slider figure {
+  margin: 0;
+  padding: 0
+}
+
+.trigger {
+  opacity: 0;
+  display: none;
+}
+
+#slider .trigger:checked + figure {
+  -moz-animation: ease-in-out 1s 1 fade-in;
+  -webkit-animation: ease-in-out 1s 1 fade-in;
+  animation: ease-in-out 1s 1 fade-in;
+  z-index: 500
+}
+
+#slider .trigger:not(:checked) + figure {
+  display: none
+}
+
+#slider figcaption {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.75);
+  bottom: 0;  
+  box-sizing: border-box;  
+  color: #eee;
+  display: block; 
+  font-family: Georgia, serif;
+  font-size: 1.5em;
+  font-style: italic;
+  left: 0;
+  padding: 0.125em .5em;
+  position: absolute;
+  width: 100%;
+}
+
+.slider-navigation label {
+  background-color: #eee;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 0 0 1px #333;
+  -webkit-box-shadow: 0 0 1px #333;
+  box-shadow: 0 0 1px #333;
+  color: #111;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.75em;
+  height: 1em;
+  line-height: 1;
+  margin: 0;
+  padding: 0.25em;
+  text-align: center;
+  width: 1em;
+}
+
+.slider-navigation {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  top: 1.25em;
+  width: 100%;
+}
+
+.slider-navigation li {
+  display: inline;
+  margin: 0 0.25em;
+}
+
+@media only screen and (min-width: 54em) {
+  #slider figcaption {
+    bottom: auto;
+    display: inline-block;
+    height: auto;
+    padding: .5em 1em;
+    top: 75%;
+    width: auto;
+  }
+  .slider-navigation {
+    bottom: 1.25em;
+    display: inline-block;
+    left: auto;
+    right: 1.25em;
+    text-align: left;
+    top: auto;
+    width: auto;
+  }
+}
+
+#slider .trigger:checked figure {
+  -moz-animation: ease-in-out 1s 1 fade-in;
+  -webkit-animation: ease-in-out 1s 1 fade-in;
+  animation: ease-in-out 1s 1 fade-in;
+  z-index: 500
+}
+
+#slider .trigger:not(:checked) figure {
+	body {
+	width: 100%; 
+	height: 1600px;
+}
+  display: none
+}
+
+#pictureSlider {
+    background: #fff;
+    width: 925px;
+}
+
+@media (min-width: 0px) and (max-width: 299px) {
+	body{
+	width: 100%; 
+	height: 1750px;
+}
+    #pictureSlider {
+		display:none;
+	}
+	img {
+	  display: none;
+	}
+}
+
+@media (min-width: 300px) and (max-width: 566px) {
+	body {
+	width: 100%; 
+	height: 1700px;
+}
+      #pictureSlider {
+    background: #fff;
+    width: 350px;
+	transition: .5s;
+}
+img {
+	  display: block;
+	  height: auto;
+	  max-width: 325px;
+	  transition: .5s;
+	}
+}
+@media (min-width: 567px) and (max-width: 799px) {
+	body {
+	width: 100%; 
+	height: 1850px;
+}
+   #pictureSlider {
+    background: #fff;
+    width: 650px;
+	transition: .5s;
+}
+img {
+	  display: block;
+	  height: auto;
+	  max-width: 625px;
+	  transition: .5s;
+	}
+}
+@media (min-width: 800px) and (max-width: 999px) {
+	body {
+	width: 100%; 
+	height: 1650px;
+}
+    #pictureSlider {
+    background: #fff;
+    width: 800px;
+	transition: .5s;
+	}
+	#img {
+	  display: block;
+	  height: auto;
+	  max-width: 750px;
+	  transition: .5s;
+	}
+img {
+	  display: block;
+	  height: auto;
+	  max-width: 775px;
+	  transition: .5s;
+	}
+}
+@media (min-width: 1000px) and (max-width: 1199px) {
+	body {
+	width: 100%; 
+	height: 1600px;
+}
+   #pictureSlider {
+		background: #fff;
+		width: 850px;
+		transition: .5s;
+	}
+	img {
+	  display: block;
+	  height: auto;
+	  max-width: 825px;
+	  transition: .5s;
+	}
+}
+@media (min-width: 1200px) {
+	body {
+	width: 100%; 
+	height: 1500px;
+}
+   #pictureSlider {
+		background: #fff;
+		width: 925px;
+		transition: .5s;
+	}
+	img {
+	  display: block;
+	  height: auto;
+	  max-width: 900px;
+	  transition: .5s;
+	}
+}

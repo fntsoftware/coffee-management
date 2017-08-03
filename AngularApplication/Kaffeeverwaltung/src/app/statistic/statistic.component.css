@@ -1,0 +1,93 @@
+/* General block for the organization of the statistics */
+#Statistics {
+	width: 350px; 
+	height: 1175px;
+}
+
+h1 {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 2px 2px black;
+	text-align: right;
+	padding: 5px;
+	display: block;
+}
+
+h2 {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 2px 2px black;
+	text-align: left;
+	padding: 5px;
+  	padding-bottom: 1px;
+	display: block;
+}
+
+h3 {
+	color: #0F275C;
+	font-family: cursive;
+	text-shadow: 0px 0px black;
+	text-align: left;
+	padding: 15px;
+	display: block;
+}
+
+p {
+	font-family: Arial,  sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+}
+
+/* Blocks to organize the Charts */
+#Chart {
+	display: block;
+	width: 350px;
+	height: 350px;
+}
+
+#Chart2 {
+	display: block; 
+	width:350px; 
+	height: 350px;
+}
+
+#ChartOver {
+	height: 355px;
+
+}
+
+#BarChart {
+	display: block; 
+	width: 500px; 
+	
+}
+
+#PieChart { 
+	display: block; 
+	width:  275px; 
+	height: 275px;
+}
+
+.button {
+display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #0F275C;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #284da1}
+
+.button:active {
+  background-color: #284da1;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

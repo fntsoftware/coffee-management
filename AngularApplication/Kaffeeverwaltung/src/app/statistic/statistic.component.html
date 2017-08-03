@@ -1,0 +1,90 @@
+<html>
+	<head>
+	</head>
+	<body id="Statistics">
+		
+		<table style="width: 100%;">
+			<!-- coffee consumption  per floor -->
+			<tr>
+				<h2>Kaffeeverbrauch pro Stockwerk in Liter</h2>
+				<hr>
+			</tr>
+			<div style="width: 70%">
+			<tr>
+				<td>
+					<h3>Geb&auml;ude 1</h3>
+					<div id="Chart">
+						<canvas baseChart *ngIf="donutChartDataG1 && donutChartDataG1.length > 0" 
+							[data]="donutChartDataG1"
+							[labels]="donutChartLabelsG1"
+							[chartType]="donutChartTypeG1"
+							(chartHover)="chartHovered($event)"
+							(chartClick)="chartClicked($event)"></canvas>
+					</div>
+				</td>
+				<td>
+					<h3>Geb&auml;ude 2</h3>
+					<div id="Chart">
+						<canvas baseChart  *ngIf="donutChartDataG2 && donutChartDataG2.length > 0" 
+							[data]="donutChartDataG2"
+							[labels]="donutChartLabelsG2"
+							[chartType]="donutChartTypeG2"
+							(chartHover)="chartHovered($event)"
+							(chartClick)="chartClicked($event)"></canvas>
+					</div>
+				</td>
+				<td>
+					<h3>Geb&auml;ude 3</h3>
+					<div id="Chart">
+						<canvas baseChart  *ngIf="donutChartDataG3 && donutChartDataG3.length > 0" 
+							[data]="donutChartDataG3"
+							[labels]="donutChartLabelsG3"
+							[chartType]="donutChartTypeG3"
+							(chartHover)="chartHovered($event)"
+							(chartClick)="chartClicked($event)"></canvas>
+					</div>
+				</td>
+			</tr>
+			</div>
+			<!--Coffee consumption overwiev -->
+				<br><br><br>
+				<h2>Gesamt&uuml;bersicht: Kaffeeverbrauch pro Geb&auml;ude in Liter</h2>
+				<hr>
+				<br>
+			<tr>
+			<div id="ChartOver">
+				<td>
+					<div id="BarChart" valign="top">
+						<canvas baseChart baseChart *ngIf="barChartData && barChartData.length > 0"
+								[datasets]="barChartData"
+								[labels]="barChartLabels"
+								[options]="barChartOptions"
+								[legend]="barChartLegend"
+								[chartType]="barChartType"
+								(chartHover)="chartHovered($event)"
+								(chartClick)="chartClicked($event)"></canvas>
+					</div>
+				</td>
+				<td>
+					<div id="PieChart" valign="top">
+						<canvas baseChart *ngIf="pieChartDataOverview && pieChartDataOverview.length > 0"
+								[data]="pieChartDataOverview"
+								[labels]="pieChartLabelsOverview"
+								[chartType]="pieChartTypeOverview"
+								(chartHover)="chartHovered($event)"
+								(chartClick)="chartClicked($event)"></canvas>
+					</div>
+				</td>
+			</div>
+			</tr>
+			<tr>
+				<td>
+					<div class="col-md-12 text-center" >
+					<button (click)="randomizeType()" class="button">Umschalten</button>
+					</div>
+				</td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
