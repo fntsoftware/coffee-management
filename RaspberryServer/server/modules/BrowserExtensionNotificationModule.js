@@ -68,7 +68,6 @@ module.exports = function () {
 		client.subscribe({ type: CONNECTED_NOTIFICATION_EVENT }, function(msg) { 
        	 	server.sendMessage("all", JSON.stringify({type: CONNECTED_EVENT, connection: msg.connected }));
     	});
-	
-	
+		
     }); // Event Handler
 }; // Module

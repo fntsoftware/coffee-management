@@ -1,0 +1,114 @@
+<!-- HTML code for the firefox plug-in -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Title and the corresponding .js and .css file -->
+		<title>Kaffeverwaltung</title>
+		<script src="popup.js"></script>
+		<link rel="stylesheet" href="stylesheet.css"> 
+  </head>
+  <body>
+	<!-- "Kaffeeverwaltung" fieldset -->
+	<div id="background">
+	<fieldset>
+		<legend> Kaffeeverwaltung </legend>
+			<table width="25%" span ="3">	
+				<tr>
+					<!-- Labels for the option groups -->
+					<td> <label for="selectedBuilding">Geb&auml;ude ausw&auml;hlen</label> </td>
+					<td> <label for="selectedPot">Stockwerk ausw&auml;hlen</label> </td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Select building optiongroup -->
+						<select name="selectedBuilding" id="selectedBuilding"  style="width:185px; ">
+							<optgroup label="Standort Ellwangen">
+								<option value="" disabled selected>Bitte Geb&auml;ude ausw&auml;hlen</option>
+								<option value="1">Geb&auml;ude 1</option>
+								<option value="2">Geb&auml;ude 2</option>
+								<option value="3">Geb&auml;ude 3</option>
+							</optgroup>
+						</select>
+					</td>
+					<td>
+						<!-- Select pot optiongroup -->
+						<select name="selectedPot" id="selectedPot" style="width:185px; ">
+							<optgroup label="Standort Ellwangen">
+								<option value="" disabled selected>Bitte Kanne ausw&auml;hlen</option>
+								<option value="1">Stockwerk 1</option>
+								<option value="2">Stockwerk 2</option>
+								<option value="3">Stockwerk 3</option>
+							</optgroup>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<!-- Labels for the input -->
+					<td> <label for="ip">IP Adresse</label> </td>
+					<td> <label for="port">Port</label> </td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Enter ip address -->
+						<input name="ip" id="ipAddress" type="text" size="24" placeholder="Bitte IP-Adresse eingeben ...">
+					</td>
+					<td>
+						<!-- Enter port number -->
+						<input name="port" id="port" type="number" style="width:182px; " placeholder="Bitte Port eingeben ...">
+					</td>
+				</tr>
+				<!--Enter username {not necessary} -->
+				<tr><td>	
+					<label for="username">Benutzername</label>
+					<p id="small">* nicht verpflichtend</P>
+				</td></tr>
+				<tr><td>
+					<input name="usrName" id="usrName" type="text" size="24" placeholder="Bitte Name eingeben ...">
+				</td></tr>	
+				<tr>
+				<!-- Buttons to connect and to go to the website -->
+					<td> <button class="button" size="20" id="connectBtn">Connect</button>				
+						<button class="button" size="20" id="websiteBtn">Website</button>
+					</td>
+				</tr>
+			</table>
+	</fieldset>
+	</div>
+	<br>
+	<!-- "Steuerung" fieldset -->
+	<div id="background">
+	  <fieldset>
+		<legend> Steuerung </legend>
+		<table width="25%" span ="3">
+			<!-- Notifications -->
+			<tr>
+				<td> <label for="notifications">Benachrichtigungen</label> </td>
+			</tr>
+			<tr>
+				<td> <div class="alert-box notice" id="notifications">Status der Kaffeekanne unbekannt</div> </td>
+			</tr>	
+			<!-- Progress bar -->
+			<tr>
+				<td> <br> <label for="progressBar">Statusleiste</label> </td>
+			</tr>	
+			<tr>
+				<td id="animation"> 
+					<div id="percentCount" class="percent-count">100%</div>
+					<div class="progress-bar">
+						<div class="progress" id="progress"></div>
+					</div>
+				</td>
+			</tr>
+			<!-- Buttons -->
+			<tr>
+				<td><br>
+					<button class="button" id="acceptBtn" disabled>Abholen</button> 
+					<!-- Weiterentwicklung <button class="button" id="refillBtn">Auff&uuml;llen</button> --> 
+				</td>
+			</tr>
+		</table>
+	  </fieldset>
+	</div>
+  </body>
+  <br><br>
+</html>

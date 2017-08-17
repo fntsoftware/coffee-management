@@ -45,7 +45,7 @@ span:after {
     -webkit-mask-image: url(https://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
 }
 
-/*        Social Media Button       */
+/* ------------------------------------ Social Media Button ---------------------------------------------- */
 
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
@@ -174,7 +174,7 @@ table {
 	border-spacing: 0px;	
 }
 
-/*      Logo     */
+/*  --------------------------------------  Logo ----------------------------------------------- */
 
 img {
 	float: top;
@@ -195,6 +195,8 @@ img {
     background-color: #fff;
     border-radius: 5px;
 }
+
+/* ------------------------------------------------------- Resonsive design -------------------------------------------- */
 
 @media (min-width: 0px) and (max-width: 299px) {
     span, span:after {

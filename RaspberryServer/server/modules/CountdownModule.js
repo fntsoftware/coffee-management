@@ -10,6 +10,7 @@ module.exports = function () {
 
 	/////////////////////////////// Client messages /////////////////////////////////////////
     const POT_READY_NOTIFICATION_EVENT = 'potReadyNotification';
+	const DATABASE_UPDATE_NOTIFICATION_EVENT = 'databaseUpdateNotification';
     const START_COUNTDOWN_EVENT = 'startCountdown';
 	const POT_UPDATE_NOTIFICATON_EVENT = 'potUpdateNotification';
 	/////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,7 +54,7 @@ module.exports = function () {
                 client.post({ type: POT_READY_NOTIFICATION_EVENT, potId: potId });
                 clearInterval(intervalId);
             }
-        }, 200);
+        }, 1000);
     }
   
     /* Events */
@@ -63,6 +64,7 @@ module.exports = function () {
 		{ 
         	console.log("<CountDownModule> Start countdown!");
         	startTimer(msg.time, msg.potId);
+			client.post({ type: DATABASE_UPDATE_NOTIFICATION_EVENT, buildingId: msg.buildingId, potId: msg.potId });
     	});
     });
 };

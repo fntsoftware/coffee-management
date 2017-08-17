@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FNT Kaffeeverwaltung - Optionen</title>
+		<link rel="stylesheet" href="options.css">
+		<script type="text/javascript" src="options.js"></script>
+		<meta http-equiv="pragma" content="no-cache"> 
+        <meta http-equiv="cache-control" content="no-cache"> 
+		<meta http-equiv="expires" content="0"> 
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li>
+					<a id="/">Plug-In Optionen</a>
+				</li>
+				<li>
+					<a href="settings.html">Standard Einstellungen</a>
+				</li>
+				<li>
+					<a href="about.html">&Uuml;ber das Plug-In</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="form-style-8">
+  		<h2>FNT-GmbH: Plug-In Optionen</h2>
+			<h4>Hier k&ouml;nnen Sie die wichtigsten Einstellungen zum Kaffeekannen Plug-In vornehmen!</h4>
+			<br>
+			<hr>
+			<table>
+				<tr>
+					<td>
+						<!-- Do you want to display any notification -->
+						<label>Wollen Sie wichtige Benachrichtigungen empfangen?:</label>
+					</td>
+					<td>
+						<select id="notifications">
+							<option selected value="Ja">Ja</option>
+							<option value="Nein">Nein</option>
+						</select>
+					</td>
+				<br><br>
+				</tr>
+					<td>
+						<!-- Do you want to display the track pot notification -->
+						<label>Wollen Sie &uuml;ber den Braustatus der Kaffeekanne informiert werden?:</label>
+					</td>
+					<td>
+						<select id="trackNotification">
+							<option selected value="Ja">Ja</option>
+							<option value="Nein">Nein</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<br><br>
+			
+			<div class="popup">
+				<span class="popuptext" id="myPopup">Optionen wurden gespeichert!</span>
+			</div>
+		
+			<!-- Buttons -->
+			<table>
+				<tr>
+					<td>
+						<button id="save" class="button" onclick="myFunction()"> Speichern </button>			
+						<button id="load" class="button"> Laden </button>
+						<button id="closeBtn" class="button"> Schlie&szlig;en </button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

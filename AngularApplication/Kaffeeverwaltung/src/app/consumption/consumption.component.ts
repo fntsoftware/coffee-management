@@ -50,6 +50,29 @@ export class ConsumptionComponent {
   }
 
    private handleData(obj: any) : void {
+      this.htmlConsumB1S1 = "inaktiv"
+      this.htmlAverB1S1 = "inaktiv";
+      this.htmlConsumB1S2 = "inaktiv";
+      this.htmlAverB1S2 = "inaktiv";
+      this.htmlConsumB1S3 = "inaktiv";
+      this.htmlAverB1S3 = "inaktiv";
+      this.htmlConsumB2S1 = "inaktiv";
+      this.htmlAverB2S1 = "inaktiv";
+      this.htmlConsumB2S2 = "inaktiv";
+      this.htmlAverB2S2 = "inaktiv";
+      this.htmlConsumB2S3 = "inaktiv";
+      this.htmlAverB2S3 = "inaktiv";
+      this.htmlConsumB2S4 = "inaktiv";
+      this.htmlAverB2S4 = "inaktiv";
+      this.htmlConsumB2S5 = "inaktiv";
+      this.htmlAverB2S5 = "inaktiv";
+      ////////////// Aktives Gebäude ///////////////
+      this.htmlConsumB3S1 = obj.consumption.consumptionb3f1 + " Liter";
+      this.htmlAverB3S1 = obj.consumption.averageb3f1 + " Liter";
+      this.htmlConsumB3S2 = obj.consumption.consumptionb3f2 + " Liter";
+      this.htmlAverB3S2  = obj.consumption.averageb3f2 + " Liter";
+      this.htmlConsumB3S3 = obj.consumption.consumptionb3f3 + " Liter";
+      this.htmlAverB3S3 = obj.consumption.averageb3f3 + " Liter";
    }
 
 }

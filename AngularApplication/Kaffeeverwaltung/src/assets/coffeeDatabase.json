@@ -1,88 +1,76 @@
 {
   "building1": {
-    "floor1": 10,
-    "floor2": 10,
-    "floor3": 50
+    "floor1": 0,
+    "floor2": 0,
+    "floor3": 0
   },
   "building2": {
-    "floor1": 20,
-    "floor2": 100,
-    "floor3": 140,
-    "floor4": 70,
+    "floor1": 0,
+    "floor2": 0,
+    "floor3": 0,
+    "floor4": 0,
     "floor5": 0
   },
   "building3": {
-    "floor1": 440,
-    "floor2": 320,
-    "floor3": 190
-  },
-  "summary": {
-    "building1": 440
+    "floor1": "4.40",
+    "floor2": 0,
+    "floor3": 0
   },
   "coffeeChefKing": {
     "name1": [
-      "Maik"
+      "Jürgen"
     ],
-    "consumption1": 430,
+    "consumption1": 15.4,
     "name2": [
-      "Josch"
+      "Herbert"
     ],
-    "consumption2": 220,
-    "name3": "Thomas",
-    "consumption3": 110
-  },
-  "coffeeChefEmperor": {
-    "name": "Konstantin",
-    "consumption": "70"
+    "consumption2": 4.4,
+    "name3": "",
+    "consumption3": 0
   },
   "status": {
-    "building3floor1": "aktiv",
-    "building3floor1Time": "15:46 20:7:2017",
-    "building1floor1": "inaktiv",
-    "building1floor1Time": "unbekannt",
-    "building1floor2": "inaktiv",
-    "building1floor2Time": "unbekannt",
-    "building1floor3": "inaktiv",
-    "building1floor3Time": "unbekannt",
+    "building3floor2": "aktiv",
+    "building3floor2Time": "15:12 Uhr am 4.August 2017",
+    "building1floor1": "aktiv",
+    "building1floor1Time": "12:23 Uhr am 3.August 2017",
+    "building1floor2": "aktiv",
+    "building1floor2Time": "17:52 Uhr am 2.August 2017",
+    "building1floor3": "aktiv",
+    "building1floor3Time": "07:12 Uhr am 3.August 2017",
+    "building2floor1": "aktiv",
+    "building2floor1Time": "10:39 Uhr am 3.August 2017",
     "building2floor2": "inaktiv",
     "building2floor2Time": "unbekannt",
-    "building2floor3": "inaktiv",
-    "building2floor3Time": "unbekannt",
-    "building2floor4": "inaktiv",
-    "building2floor4Time": "unbekannt",
+    "building2floor3": "aktiv",
+    "building2floor3Time": "12:12 Uhr am 3.August 2017",
+    "building2floor4": "aktiv",
+    "building2floor4Time": "14:42 Uhr am 3.August 2017",
     "building2floor5": "inaktiv",
     "building2floor5Time": "unbekannt",
-    "building3floor3": "inaktiv",
-    "building3floor3Time": "unbekannt",
-    "building3floor2": "aktiv",
-    "building3floor2Time": "8:17 19:7:2017",
-    "building2floor1": "aktiv",
-    "building2floor1Time": "9:2 19:7:2017"
+    "building3floor1": "aktiv",
+    "building3floor1Time": "08:57 Uhr am 3.August 2017",
+    "building3floor3": "aktiv",
+    "building3floor3Time": "11:45 Uhr am 1.August 2017"
   },
   "consumption": {
-    "consumptionb3f1": 30,
-    "consumptionb3f2": 20,
-    "consumptionb3f3": 30,
-    "averageb3f1": 70,
-    "averageb3f2": 25,
-    "averageb3f3": 73
+    "consumptionb3f1": "4.40",
+    "consumptionb3f2": "15.40",
+    "consumptionb3f3": 0,
+    "averageb3f1": "4.40",
+    "averageb3f2": "3.85",
+    "averageb3f3": 0
   },
   "history": {
     "notification1Building": 3,
     "notification1Floor": 1,
-    "notification1Time": "14:4 19:7:2017",
+    "notification1Time": "15:12 Uhr am 3.August 2017",
     "notification2Building": 3,
     "notification2Floor": 1,
-    "notification2Time": "15:27 20:7:2017",
+    "notification2Time": "15:12 Uhr am 3.August 2017",
     "notification3Building": 3,
-    "notification3Floor": 1,
-    "notification3Time": "15:46 20:7:2017"
+    "notification3Floor": 2,
+    "notification3Time": "15:12 Uhr am 3.August 2017"
   },
-  "number": [
-    {
-      "count": 1
-    }
-  ],
   "pot": {
     "building1floor1": false,
     "building1floor2": false,

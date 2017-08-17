@@ -12,6 +12,7 @@ module.exports = function () {
 	const CONTROL_COFFEE_NOTIFICATION_EVENT = 'controlCoffeeNotification';
 	const POT_READY_NOTIFICATION_EVENT = 'potReadyNotification';
     const START_COUNTDOWN_EVENT = 'startCountdown';
+	const INFORM_POT_READY_EVENT = 'informPotReadyEvent';
     const MAP_EVENT = 'map';
 	/////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -31,7 +32,7 @@ module.exports = function () {
 					startedCountdowns.push(1);
 					client.post({ type: RESET_CONTROL_COFFEE_NOTIFICATION_EVENT, building: 3, floor: 1 });
 					client.post({ type: INCOMMING_POT_NOTIFICATION_EVENT, potId: 1 });
-					client.post({ type: START_COUNTDOWN_EVENT, time: 480, potId: 1 }); // set countdown for 8 minutes
+					client.post({ type: START_COUNTDOWN_EVENT, time: 480, buildingId: 3, potId: 1 }); // set countdown for 8 minutes
 					client.post({ type: CONTROL_COFFEE_NOTIFICATION_EVENT, control: true, building: 3, floor: 1, name: '' });
 				}
                 break;
@@ -43,7 +44,7 @@ module.exports = function () {
 					startedCountdowns.push(2);
 					client.post({ type: RESET_CONTROL_COFFEE_NOTIFICATION_EVENT, building: 3, floor: 2 });
 					client.post({ type: INCOMMING_POT_NOTIFICATION_EVENT, potId: 2 });
-					client.post({ type: START_COUNTDOWN_EVENT, time: 480, potId: 2 });
+					client.post({ type: START_COUNTDOWN_EVENT, time: 480, buildingId: 3, potId: 2 });
 					client.post({ type: CONTROL_COFFEE_NOTIFICATION_EVENT, control: true, building: 3, floor: 2, name: '' });
 				}
                 break;
@@ -55,7 +56,7 @@ module.exports = function () {
 					startedCountdowns.push(3);
 					client.post({ type: RESET_CONTROL_COFFEE_NOTIFICATION_EVENT, building: 3, floor: 3 });
 					client.post({ type: INCOMMING_POT_NOTIFICATION_EVENT, potId: 3 });
-					client.post({ type: START_COUNTDOWN_EVENT, time: 480, potId: 3 });
+					client.post({ type: START_COUNTDOWN_EVENT, time: 480, buildingId: 3, potId: 3 });
 					client.post({ type: CONTROL_COFFEE_NOTIFICATION_EVENT, control: true, building: 3, floor: 3, name: '' });
 				}
                 break;
@@ -79,6 +80,6 @@ module.exports = function () {
         	var index = startedCountdowns.indexOf(msg.potId);
 			startedCountdowns.splice(index, 1);
     	});
+		
 	}); // End of Event
-	
 }; // End of Module

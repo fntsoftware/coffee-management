@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ConsumptionService {
-
   ////////////////////////////// Getting Data from the JSON file and return it to the component ///////////////////////////////
   private baseUrl: string = './assets';
   constructor(private http : Http){ }
