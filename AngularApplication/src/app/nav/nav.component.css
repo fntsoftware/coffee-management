@@ -1,0 +1,49 @@
+li a {
+  text-decoration: none;
+  position: relative;
+  padding: 15px 15px;
+  font-family: 'Lato', sans-serif;
+  display: block;
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  color: #ffffff;
+  padding: 15px 20px;
+}
+
+li:hover ul {
+  display: block;
+  position: absolute;
+  list-style: none;
+  background-color: #0F275C;
+  padding: 0px;
+}
+
+li:hover li {
+  display: block;
+  float: none;
+}
+
+li:hover li a {
+  text-decoration: none;
+  font: normal 14px 'Lato', sans-serif;
+  color: white;
+  width: 90px;
+}
+
+li:hover li a:hover {
+  background-color: #5a6b8f;
+  color: #ffffff;
+  font-size: 15px;
+  width: 100%;
+}
+
+li:hover > a {
+  background: #ffffff;
+  color: #0F275C;
+  font-size: 15px;
+}
+
+li li {
+    display: none;
+}

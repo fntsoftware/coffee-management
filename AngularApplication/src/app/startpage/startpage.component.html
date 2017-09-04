@@ -1,0 +1,75 @@
+<!-- HTML Code for the start page -->
+<body>
+  <div class="content"> <br>
+	<a id="Anfang"> Anfang des Seite</a>
+	<!-- Text space -->	
+	<main>
+		<article>
+			<h3>Herzlich Willkommen auf der FNT-Kaffeeverwaltungswebsite</h3>
+			<p>Auf dieser Website finden Sie aktuelle News zum Status des "Kaffeekannen-Benachrichtigungs-" Lab Projektes (coffeesnitch)!</p>
+			<p>Unteranderem k&ouml;nnen  Sie hier verschiedene Statistiken, die Verlaufsprotokolle der Kaffeekannen und den aktuellen Tagesverbrauch abrufen.</p>
+			<p>Unter dem Punkt "Vorschl&auml;ge" k&ouml;nnen Sie ihr Verbesserungsvorschl&auml;ge und W&uuml;nsche zum Projekt (Website,Plug-In ...) hinterlassen.</p>
+		</article>
+		<aside>
+			<h3>Was ist das Kaffeeverwaltungprojekt?</h3>
+				<p>Das Kaffeekannenprojekt wurde erstellt, um die Verwaltung der Kaffeekanne auf jedem Stockwerk gemeinsam zu regeln.</p>
+				<p>Hief&uuml;r kann &uuml;ber eine Plug-In der Status der Kaffeekanne verfolgt werden und evtl. auch Aufgaben (beispielsweiße das Abholen der Kaffeekanne) koordiniert und &uuml;bernommen werden.</p>
+				<p>Hinter dem Plug-In steckt ein Raspberry PI, welcher an die Kaffeemaschienen angeschlossen ist, und mittles RFID-Chips gesteuert wird.</p>
+				<p>Daf&uuml;r wurde an den Kaffeemaschienen RFID-Leseger&auml;te (siehe Bilder) angeschlossen, die automatisch die RFID-Chips auslesen und diesen</p>
+				<p>automatisch an den Raspberry weitergeben. Wichtig hierf&uuml;r ist, dass die beigelegten Chipkarten kurz über das daf&uuml;r vorgesehen Leseger&auml;te gemäß Anleitung h&auml;llt!</p>
+				<p>Ein kurzer piepston informiet Sie dar&uuml;ber, dass der RFID-Chip erfolgreich eingelesen werden konnte!</p>
+		</aside>
+	</main>	<br><br>
+	<!-- Default configuration Text box -->
+	<div id="konfi">
+		<p>Standard-Konfiguration:</p>
+		<p>IP-Adresse: 172.27.10.180</p>
+		<p>Port: 9050</p>
+		<p>Benutzername ist nicht verpflichtend!</p>
+		<br><br>
+	</div>
+	<!-- Picture Slideshow -->
+	<h3> Aktuelle Bilder zum Kaffeekannenprojekt </h3>
+	<div id="pictureSlider">
+      <div class="slider-wrapper">
+        <div id="slider" class="clearfix">
+            <input type="radio" name="slider" class="trigger" id="one" checked="checked" />
+            <figure>
+            <img src="./assets/Bilder/slide1.jpg" />
+            <figcaption>Raspberry Pi Server einrichten</figcaption>
+            </figure>
+            <input type="radio" name="slider" class="trigger" id="two" />
+            <figure>
+            <img src="./assets/Bilder/slide2.jpg" />
+            <figcaption>Plug-In Testlauf</figcaption>
+            </figure>
+            <input type="radio" name="slider" class="trigger" id="three" />
+            <figure>
+            <img src="./assets/Bilder/slide3.jpg" />
+            <figcaption>Server Nachrichten</figcaption>
+            </figure>
+            <input type="radio" name="slider" class="trigger" id="four" />
+            <figure>
+            <img src="./assets/Bilder/slide4.jpg" />
+            <figcaption>Entwurf der Website</figcaption>
+            </figure>
+            <input type="radio" name="slider" class="trigger" id="five" />
+            <figure>
+            <img src="./assets/Bilder/slide5.jpg" />
+            <figcaption>Server Nachrichten</figcaption>
+            </figure>
+        </div>
+        <ul class="slider-navigation">
+            <li><label for="one">1</label></li>
+            <li><label for="two">2</label></li>
+            <li><label for="three">3</label></li>
+            <li><label for="four">4</label></li>
+            <li><label for="five">5</label></li>
+        </ul>
+        </div>
+    </div>
+	<br><br>
+  </div> <!-- End of content div -->
+  <br>
+  <a routerLink="documentation">Projekt Dokumentation einsehen!</a>
+</body>

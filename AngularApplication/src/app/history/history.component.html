@@ -1,0 +1,43 @@
+<br>
+<h2> History </h2>
+
+<br>
+<p> Hier finden Sie die neusten Aktivitäten zum Kaffeekannenprojekt </p><br>
+<p> Sie wollen wissen wann die Kollegen aus den anderen Stockwerken Ihre Kaffeekannen auff&uuml;llen?</p><br>
+<p> Dann sind sie hier genau richtig. Hier finden Sie eine Auflistung der aktuellten Brauvorg&auml;nge bei FNT. </p>
+<br>
+<div id="header">
+    <div class="logo"><a href="#">Aktueller Verlauf der Brauvorg&auml;nge</a></div>
+</div> <br>
+<div id="notifications">
+	<!-- First Notification -->
+    <div class="notify" [@focusPanel]="state">
+        <div class="header-wrapper" (click)="animateHistory1()">
+            <span class="title" [innerHTML] = "notification1Header"></span>
+        </div>
+        <div class="content-wrapper" (click)="animateHistory1()">
+            <div class="floatleft pdtop" [innerHTML] = "notification1"> <br><br> </div>	
+        </div>
+    </div>
+    <!-- Second Notification -->
+    <div class="notify" [@focusPanel2]="state2">
+        <div class="header-wrapper" (click)="animateHistory2()">
+            <span class="title" [innerHTML] = "notification2Header"></span>
+        </div>
+        <div class="content-wrapper" (click)="animateHistory2()">
+            <div class="floatleft pdtop" [innerHTML] = "notification2"> <br><br> </div>	
+        </div>
+    </div>
+    <!-- Third Notification -->
+    <div class="notify" [@focusPanel3]="state3">
+        <div class="header-wrapper" (click)="animateHistory3()">
+            <span class="title" [innerHTML] = "notification3Header"></span>
+        </div>
+        <div class="content-wrapper" (click)="animateHistory3()">
+            <div class="floatleft pdtop" [innerHTML] = "notification3"> <br><br> </div>	
+        </div>
+    </div>
+    <div id="header">
+        <div class="logo"><a href="#"></a></div>
+    </div> <br>
+</div>
