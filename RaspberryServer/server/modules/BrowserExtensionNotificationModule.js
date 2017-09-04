@@ -12,6 +12,7 @@ module.exports = function () {
 	const CONTROL_COFFEE_NOTIFICATION_EVENT = 'controlCoffeeNotification';
 	const INFORM_USER_NOTIFICATION_EVENT = 'informUserNotification';
 	const CONNECTED_NOTIFICATION_EVENT = 'userConnectedNotification';
+    const CONNECTION_NOTIFICATION_EVENT = 'connectionNotification';
 	
 	const INCOMMING_POT_EVENT = 'incommingPot';
 	const POT_READY_EVENT = 'potReady';
@@ -19,12 +20,14 @@ module.exports = function () {
 	const CONTROL_COFFEE_EVENT = 'controlCoffee';
 	const INFORM_USER_EVENT = 'informUser';
 	const CONNECTED_EVENT = 'userConnected';
+    const CONNECTION_EVENT = 'connection';
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 	var simplebus = require('simplebus');
 	var client = simplebus.createClient(8181);
+    var connectionReply = setInterval(testConnection, 30000);
   
 	var WebSocketServer = require("websocketserver");
-	var server = new WebSocketServer("all", 9050);
+	var server = new WebSocketServer("all", 9010);
 	
     server.on("connection", function(id) {
 		client.post({ type: CONNECTED_NOTIFICATION_EVENT, connection: true });
@@ -34,6 +37,12 @@ module.exports = function () {
     server.on("closedconnection", function(id) {
         console.log("Connection " + id + " has left the server");
     });
+	
+	// A connection test is made every 30 seconds
+	function testConnection() 
+	{
+		client.post({ type: CONNECTION_NOTIFICATION_EVENT, connection: true });
+	}
     
     /* Events */  
     client.start(function(){
@@ -68,6 +77,11 @@ module.exports = function () {
 		client.subscribe({ type: CONNECTED_NOTIFICATION_EVENT }, function(msg) { 
        	 	server.sendMessage("all", JSON.stringify({type: CONNECTED_EVENT, connection: msg.connected }));
     	});
+    
+		// Notificaton to check the connection
+		 client.subscribe({ type: CONNECTION_NOTIFICATION_EVENT }, function(msg) { 
+				server.sendMessage("all", JSON.stringify({type: CONNECTION_EVENT, connection: true }));
+		});
 		
     }); // Event Handler
 }; // Module

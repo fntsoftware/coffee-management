@@ -2,11 +2,12 @@
 window.WebSocket = window.WebSocket || window.MozWebSocket;
 
 /////////////////////////////////////////////// Attributes and Events //////////////////////////////////////////////////////// 
-var INCOMMING_POT_EVENT = "incommingPot", POT_READY_EVENT = "potReady", POT_UPDATE_EVENT = "potUpdate", CONTROL_COFFEE_EVENT = 'controlCoffee', INFORM_USER_EVENT = 'informUser', CONNECTED_EVENT = 'userConnected';
+var INCOMMING_POT_EVENT = "incommingPot", POT_READY_EVENT = "potReady", POT_UPDATE_EVENT = "potUpdate", CONTROL_COFFEE_EVENT = 'controlCoffee', INFORM_USER_EVENT = 'informUser', CONNECTED_EVENT = 'userConnected', CONNECTION_EVENT = 'connection';
 var sockets = [], connection, connectedToServer = false; // Variables for the websocket connection
-var statusControl = 1, timeDisplayed = 0, progTimer = 0, iconTimer = 0, displayBar = true, stopTime = 0; // Variables to watch over the time
+var statusControl = 1, timeDisplayed = 0, progTimer = 0, iconTimer = null, displayBar = true, stopTime = 0; // Variables to watch over the time
 var buildNr = localStorage.getItem("buildNr"), floorNr = localStorage.getItem("floorNr"), usrName = localStorage.getItem("usrName"); // Get user information from local storage
 var myNotificationID = null, notificationCtr = 1, icon = "icons/ready/ready48b.png"; // Variables for the notifications
+var controllConnection = setInterval(isConnected, 10000), connectionCount = 0, connectBoolean = false; 
 //////////////////////////////////////////////// Functions //////////////////////////////////////////////////////////////////
 // Initial connect
 tryConnect();
@@ -22,7 +23,7 @@ function tryConnect() {
 	if(ipAddr && port) 
 	{
 		// Establish a connection
-		removeAllClients();
+		// removeAllClients();
 		var WS_URL = 'ws://' + ipAddr + ':' + port;
 		connection = new WebSocket(WS_URL);
 		console.log("Connection: " + connection);
@@ -85,7 +86,15 @@ function onMessage(message)
 	buildNr = localStorage.getItem("buildNr"), floorNr = localStorage.getItem("floorNr"), usrName = localStorage.getItem("usrName");
 	
 	///////////////////////////////// Different messages for the user ///////////////////////////////////////////////////////////////
-    if(json.type == INCOMMING_POT_EVENT && json.potId == floorNr && notificationCtr == 1)
+	if(json.type == CONNECTION_EVENT)
+	{
+		// User is connected to the server and does not need a reconnect
+		connectedBoolean = true; // Set the flag to true
+		connectionCount = 0; // Reset the reconnect counter
+		checkConnection(true); 
+	}
+	
+	if(json.type == INCOMMING_POT_EVENT && json.potId == floorNr && notificationCtr == 1)
     {
 	////////////////////////////////// Pot is filled ////////////////////////////////////////////////////////////////////////////////
 		console.log("<INCOMMING-POT> Coffee can has arrived and is brewing!");
@@ -116,8 +125,8 @@ function onMessage(message)
 				showInteractionNotification(buildNr, floorNr); break;
 		}
 		
-		iconTimer = 0;
 		clearInterval(iconTimer); // Stop timer
+		iconTimer = null;
 		displayBar = true; // Enables progressbar
 		replyBtnClick(this.notifId, this.btnIdx); 
     }
@@ -126,7 +135,7 @@ function onMessage(message)
 	///////////////////////// Displays a progress bar and changes the plug-in icon /////////////////////////////////////////////////
 		var timer = 0, crtTimer = 0;
 		progTimer = 0;
-		
+
 		if(displayBar == true)
 		{
 			clearInterval(iconTimer);
@@ -142,7 +151,8 @@ function onMessage(message)
 			// Protects against unwanted calls from the server
 			this.statusControl = 5;
 			// Calls a function which changes the plug-in icon and the progress bar
-			updateIconAndBar(timer, crtTimer)
+
+			updateIconAndBar(timer, crtTimer);
 		} else {
 			switch(json.timeId) {
 				case 0: timer = 0; break;
@@ -200,7 +210,7 @@ function onMessage(message)
 	else if(json.type == CONTROL_COFFEE_EVENT && json.control == false && notificationCtr == 1)
 	{
 	///////////////////////// Notification to inform that a user has agreed to pick up coffee pot //////////////////////////////////
-		console.log("<CONTROL-COFFEE> You habe agreed to pick up the coffee can!");
+		console.log("<CONTROL-COFFEE> Coffee can was picked up from a user!");
 		var getPot = {
 			type: 'basic',
 			title: 'Kaffeekanne wird abgeholt!',
@@ -249,7 +259,7 @@ chrome.notifications.onClosed.addListener(function callback(notificationId, byUs
 		console.log("<WINDOW-CLOSED> User Interaction - Notification closed!");
 		displayBar = false; // Disables the function
 		clearInterval(iconTimer); // Stopp the counter
-		iconTimer = 0; // Reset the counter variables 
+		iconTimer = null; // Reset the counter variables 
 		updateIcon(stopTime); // Calls the function for updating the icon
 	}
 });
@@ -269,27 +279,28 @@ function replyBtnClick(notifId, btnIdx) {
 		{
 			// Connects to server
 			var WS_URL = 'ws://' + ipAddr + ':' + port;
-			var connection = new WebSocket(WS_URL);
+			var connectionClient = new WebSocket(WS_URL);
 		
 			// Checks every second if the server is ready to send messages and if he is he sends the message
 			var myTimer = setInterval(function()
 			{ 
-				if (connection.readyState === 1) 
+				if (connectionClient.readyState === 1) 
 				{
+					console.log("Nachricht kann übermittelt werden!")
 					// Short delay between two consecutive actions because the raspberry have to edit functions
 					clearInterval(myTimer);
 					var msg = "true," + usrName + "," + buildNr + "," + floorNr;
-					connection.send(msg); // Here you inform the others who have picked the pot
+					connectionClient.send(msg); // Here you inform the others who have picked the pot
 					console.log("<CLIENT-MESSAGE1>: " + msg);
 					setTimeout(function() { 
 						var msg = "" + usrName + "," + buildNr + "," + floorNr;
 						console.log("<CLIENT-MESSAGE2>: " + msg + " has been sent to the server!");
-						connection.send(msg); // Here send your data in format: name,building,floor {like csv}
+						connectionClient.send(msg); // Here send your data in format: name,building,floor {like csv}
 						console.log("<CLIENT> Client to server message could be sent successfully!");
 					}, 5000);
 					
 					setTimeout(function() { 
-						connection.close();
+						connectionClient.close();
 					}, 10000);
 				}
 				else {
@@ -389,7 +400,7 @@ function setIcon(index1, index2) {
 function updateIconAndBar(timer, crtTimer) {		
 	// Variables to change the plug-in icon
 	var iconCount0  = 1, iconCount25 = 1, iconCount50 = 1, iconCount75 = 1; // Variables to change the icons
-	timeUpdate = timer; controllTimer = crtTimer, iconTimer = 0; // Parameters as local variables
+	timeUpdate = timer; controllTimer = crtTimer, iconTimer = null; // Parameters as local variables
 	var controllBreak = 0;
 
 	// Animates the Plug-In Icon every time intervall until a certain demolition event happens
@@ -441,6 +452,9 @@ function updateIconAndBar(timer, crtTimer) {
 			case (timeUpdate > 450 && timeUpdate < 600) && (iconCount75 == 4):
 				var msj = setProgressBar(75); iconCount75 = setIcon(75, 3);	break;
 			case (timeUpdate >= 600):
+				console.log("Timer has been stoped!");
+				clearInterval(iconTimer);
+				iconTimer = null;
 				chrome.notifications.clear("potProgStatus");
 				this.statusControl = 1; break;
 			case (timeUpdate == 150 || timeUpdate == 300 || timeUpdate == 450):
@@ -588,5 +602,28 @@ function disconnectedStyle() {
 		chrome.browserAction.setIcon({path : { "19": "icons/notConnected/notConnected19b.png" }}); // Changes the Plug-In Icon 
 		setTimeout(function(){ chrome.runtime.sendMessage({Disconnected: true}, function(response) { }); }, 1250); // Communicate
 		console.log("Disconnected from the server!");
+	}
+}
+// Function to check the connection
+function checkConnection(connection) {
+	// Checks if connected if not try to reconnect
+	if(connection == true) 
+	{
+		// console.log("Connection control successful!");
+	}
+	else if(connection == false) {
+		// tries to reconnect to the server
+		console.log("Reconnecting to the Raspberry Server!");
+		tryConnect();
+	}
+}
+function isConnected() {
+	connectionCount++;
+	//console.log("Connection is checked with an count of: " + connectionCount);
+
+	if(connectionCount >= 12)
+	{
+		connectionCount = 0;
+		checkConnection(false);
 	}
 }
